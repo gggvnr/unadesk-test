@@ -1,0 +1,16 @@
+<app-base-page>
+  <app-base-page-header>
+    <h1>{{ pageTitle() }}</h1>
+  </app-base-page-header>
+
+  @if (isEditMode()) {
+    <app-article-form [initialData]="article()" />
+  } @else {
+    @if (article()) {
+      <app-article-view
+        [article]="article()!"
+        [notes]="notes()"
+      />
+    }
+  }
+</app-base-page>

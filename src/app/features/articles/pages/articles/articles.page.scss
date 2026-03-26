@@ -1,0 +1,5 @@
+.article-card {
+  & + & {
+    margin-top: 12px;
+  }
+}

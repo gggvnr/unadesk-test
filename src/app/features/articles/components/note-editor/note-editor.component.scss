@@ -1,0 +1,50 @@
+:host {
+  display: block;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  background-color: var(--background-color-primary);
+  padding: 12px;
+}
+
+.colors {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+
+  &__item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+
+    &:hover,
+    &.-selected {
+      border-color: var(--border-color-hover);
+    }
+  }
+}
+
+.note {
+  display: block;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--border-color-hover);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}

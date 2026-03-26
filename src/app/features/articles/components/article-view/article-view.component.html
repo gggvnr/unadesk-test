@@ -1,0 +1,33 @@
+<div class="title">{{ article()?.title }}</div>
+
+<div
+  class="content"
+  #contentRef
+>
+  @for (segment of segments(); track segment.offset) {
+    @if (segment.note) {
+      <span
+        appTooltip
+        class="segment"
+        [appTooltipContent]="noteTooltipContent"
+        [attr.data-offset]="segment.offset"
+        [style.border-color]="segment.note.color"
+        >{{ segment.text }}</span
+      >
+
+      <ng-template #noteTooltipContent>
+        <p class="note-content">{{ segment.note.content }}</p>
+        <button
+          appButton
+          appearance="secondary"
+          type="button"
+          (click)="deleteNote(segment.note.id)"
+        >
+          Удалить
+        </button>
+      </ng-template>
+    } @else {
+      <span [attr.data-offset]="segment.offset">{{ segment.text }}</span>
+    }
+  }
+</div>

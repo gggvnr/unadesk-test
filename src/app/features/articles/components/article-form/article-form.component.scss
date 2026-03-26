@@ -1,0 +1,27 @@
+.label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    border-color: var(--border-color-hover);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}

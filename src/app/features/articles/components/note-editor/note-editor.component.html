@@ -1,0 +1,41 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (submit)="handleSubmit()"
+>
+  <div class="colors">
+    @for (color of noteColors; track color) {
+      <div
+        class="colors__item"
+        [class.-selected]="form.get('color')?.value === color"
+        [style]="{ backgroundColor: color }"
+        (click)="selectColor(color)"
+      ></div>
+    }
+  </div>
+
+  <textarea
+    #noteFieldRef
+    formControlName="note"
+    class="note"
+    placeholder="Аннотация"
+    rows="2"
+  ></textarea>
+
+  <div class="actions">
+    <button
+      appButton
+      appearance="secondary"
+      type="button"
+      (click)="handleCancel()"
+    >
+      Cancel
+    </button>
+    <button
+      appButton
+      type="submit"
+    >
+      Save
+    </button>
+  </div>
+</form>

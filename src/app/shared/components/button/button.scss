@@ -1,0 +1,26 @@
+:host {
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color-primary);
+  padding: 4px 8px;
+  color: var(--content-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--border-color-hover);
+  }
+
+  &.-secondary {
+    border-color: var(--system-negative);
+    background-color: var(--system-negative);
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--system-negative-dark);
+      background-color: var(--system-negative-dark);
+    }
+  }
+}

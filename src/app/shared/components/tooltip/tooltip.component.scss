@@ -1,0 +1,39 @@
+:host {
+  display: inline-block;
+  padding: 4px;
+  max-height: 100dvh;
+}
+
+.tooltip-body {
+  display: inline-block;
+  transform: scale(1);
+  animation: tooltipFadeIn 0.1s ease-in-out forwards;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow, 0 4px 15px 0 rgba(0, 0, 0, 0.15));
+  border-radius: 5px;
+  background-color: var(--background-color-primary);
+  padding: 10px;
+  max-width: var(--tooltip-width, 220px);
+  max-height: 100%;
+  overflow-y: auto;
+  color: var(--content-primary);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+::ng-deep {
+  .tooltip-overlay-backdrop {
+    display: none;
+  }
+}
+
+@keyframes tooltipFadeIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,27 @@
+<app-base-page>
+  <app-base-page-header>
+    <h1>Статьи</h1>
+
+    <ng-container ngProjectAs="actions">
+      <a
+        appButton
+        routerLink="new"
+      >
+        Новая статья
+      </a>
+    </ng-container>
+  </app-base-page-header>
+
+  @if (articles()?.length) {
+    @for (article of articles(); track article.id) {
+      <app-article-card
+        class="article-card"
+        [routerLink]="[article.id]"
+        [title]="article.title"
+        [content]="article.content"
+        (edit)="editArticle(article.id)"
+        (delete)="deleteArticle(article.id)"
+      />
+    }
+  }
+</app-base-page>

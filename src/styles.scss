@@ -1,0 +1,27 @@
+@use '@angular/cdk' as cdk;
+
+@include cdk.overlay();
+
+html {
+  box-sizing: border-box;
+
+  * {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --content-primary: #000;
+  --background-color-primary: #fff;
+  --background-color-secondary: #f1ebfa;
+  --border-color: #bfbfc3;
+  --border-color-hover: #89888d;
+  --system-negative: #ef4444;
+  --system-negative-dark: #dc2626;
+  --box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}

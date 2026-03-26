@@ -1,0 +1,37 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (submit)="submit()"
+>
+  <label
+    class="label"
+    for="title"
+    >Заголовок</label
+  >
+  <input
+    class="field"
+    id="title"
+    type="text"
+    formControlName="title"
+  />
+
+  <label
+    class="label"
+    for="content"
+    >Содержимое</label
+  >
+  <textarea
+    class="field"
+    id="content"
+    formControlName="content"
+  ></textarea>
+
+  <div class="actions">
+    <button
+      appButton
+      type="submit"
+    >
+      Сохранить
+    </button>
+  </div>
+</form>
